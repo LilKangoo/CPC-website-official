@@ -73,7 +73,7 @@
       }
     ],
     "imageResize": true,
-    "uniqCompNum": 122,
+    "uniqCompNum": 123,
     "versionPublish": "5.6.8",
     "screenshot": "screenshot.png",
     "cssOptimize": true,
@@ -2239,47 +2239,17 @@
           "_styles": {
             "padding-top": "(@paddingTop * 15px)",
             "padding-bottom": "(@paddingBottom * 15px)",
-            "& when (@bg-type = 'color')": {
-              "background-color": "@bg-value"
-            },
-            "& when (@bg-type = 'image')": {
-              "background-image": "url(@bg-value)",
-              ".mbr-overlay": {
-                "background-color": "@overlayColor",
-                "opacity": "@overlayOpacity"
-              }
-            },
-            "& when (@flexDirection)": {
-              ".mbr-row": {
-                "-webkit-flex-direction": "row-reverse",
-                "flex-direction": "row-reverse"
-              }
-            },
-            ".btn-container": {
-              "margin": "auto"
-            },
-            ".mbr-section-subtitle": {
-              "color": "#bdbdbd",
-              "font-style": "italic"
-            },
-            "@media (max-width: 768px)": {
-              ".btn-container": {
-                "margin-top": "20px"
-              }
-            },
-            ".mbr-section-title": {
-              "color": "#ffffff"
-            }
+            "background-color": "@bgColor"
           },
-          "_name": "info3",
-          "_sourceTheme": "eventamp",
-          "_customHTML": "<section class=\"info3\" group=\"Info\" plugins=\"amp-main\">\n\n    <mbr-parameters>\n        <!--Block parameters controls (Blue \"Gear\" panel) -->\n        <input type=\"range\" inline title=\"Top\" name=\"paddingTop\" min=\"0\" max=\"8\" step=\"1\" value=\"1\">\n        <input type=\"range\" inline title=\"Bottom\" name=\"paddingBottom\" min=\"0\" max=\"8\" step=\"1\" value=\"1\">\n\n        <input type=\"checkbox\" title=\"Show Title\" name=\"showTitle\" checked>\n        <input type=\"checkbox\" title=\"Show Subtitle\" name=\"showSubtitle\">\n        <input type=\"checkbox\" title=\"Show Button\" name=\"showButton\" checked>\n        <input type=\"checkbox\" title=\"Text on Left/Right\" name=\"flexDirection\" checked>\n\n\n        <fieldset type=\"background\" name=\"bg\">\n            <input type=\"color\" title=\"Background Color\" value=\"#ffffff\" selected>\n            <input type=\"image\" title=\"Background Image\" value=\"@ADDONS_PATH@/eventamp/components/_images/background1.jpg\">\n\n        </fieldset>\n        <input type=\"checkbox\" title=\"Overlay\" name=\"overlay\" condition=\"bg.type !== 'color'\" checked>\n        <input type=\"color\" title=\"Overlay Color\" name=\"overlayColor\" value=\"#222222\" condition=\"overlay && bg.type !== 'color'\">\n        <input type=\"range\" inline title=\"Opacity\" name=\"overlayOpacity\" min=\"0\" max=\"1\" step=\"0.1\" value=\"0.3\" condition=\"overlay && bg.type !== 'color'\">\n\n\n        <!-- End block parameters -->\n    </mbr-parameters>\n    <div class=\"mbr-overlay\" mbr-if=\"overlay && bg.type !== 'color'\" opacity=\"{{overlayOpacity}}\" bg-color=\"{{overlayColor}}\"></div>\n    <div class=\"container\">\n        <div class=\"mbr-row mbr-justify-content-center\">\n\n            <div class=\"mbr-col-sm-12 mbr-col-md-8 mbr-col-lg-8\" mbr-if=\"showTitle || showSubtitle\">\n                <h2 class=\"mbr-section-title align-left mbr-fonts-style mbr-bold\" mbr-theme-style=\"display-2\" mbr-if=\"showTitle\" data-app-selector=\".mbr-section-title\"><a href=\"index.html\" class=\"text-warning\" target=\"_blank\">CPC.community</a></h2>\n                <h3 class=\"mbr-section-subtitle align-left mbr-fonts-style mbr-light\" mbr-theme-style=\"display-3\" mbr-if=\"showSubtitle\" data-app-selector=\".mbr-section-subtitle\"></h3>\n\n            </div>\n\n            <div class=\"btn-container align-center mbr-col-sm-12 mbr-col-md-4 mbr-col-lg-4\" mbr-if=\"showButton\">\n                <div class=\"mbr-section-btn\" mbr-buttons mbr-theme-style=\"display-6\" data-toolbar=\"-mbrBtnMove\"><a class=\"btn btn-warning\" href=\"https://discord.gg/cGwsRjtBAD\" data-app-placeholder=\"Type Text\" target=\"_blank\"><span class=\"mobi-mbri mobi-mbri-camera mbr-iconfont mbr-iconfont-btn\"></span>Discord</a></div>\n            </div>\n\n        </div>\n    </div>\n</section>",
-          "_cid": "taEA4BR6Q4",
+          "_name": "content5",
+          "_sourceTheme": "mobirise-amp",
+          "_customHTML": "<section class=\"mbr-section 04\" plugins=\"amp-main\" group=\"Article\">\n\n    <mbr-parameters>\n    <!-- Block parameters controls (Blue \"Gear\" panel) -->\n        <header>Style</header>\n        <input type=\"range\" inline title=\"Top\" name=\"paddingTop\" min=\"0\" max=\"10\" step=\"1\" value=\"0\">\n        <input type=\"range\" inline title=\"Bottom\" name=\"paddingBottom\" min=\"0\" max=\"10\" step=\"1\" value=\"0\">\n        <input type=\"color\" title=\"Color\" name=\"bgColor\" value=\"#ffffff\">\n    <!-- End block parameters -->\n    </mbr-parameters>\n\n    <div class=\"container\">\n        <div class=\"mbr-row mbr-jc-c\">\n            <div class=\"mbr-section-btn mbr-col-md-12 mbr-col-sm-12 mbr-col-lg-8 align-center\" mbr-buttons mbr-theme-style=\"display-4\" data-toolbar=\"-mbrBtnMove\"><a class=\"btn btn-warning-outline\" href=\"index.html\" data-app-placeholder=\"Type Text\" target=\"_blank\">CPC.community</a>\n                <a class=\"btn btn-primary\" href=\"https://discord.gg/cGwsRjtBAD\" data-app-placeholder=\"Type Text\" target=\"_blank\">Discord</a></div>\n        </div>\n    </div>\n</section>",
+          "_cid": "taEB3eFAuh",
           "_protectedParams": [],
           "_global": false,
           "_once": false,
           "_params": {},
-          "_anchor": "info3-3d"
+          "_anchor": "content5-3e"
         }
       ]
     }
