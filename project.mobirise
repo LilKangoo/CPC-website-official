@@ -73,7 +73,7 @@
       }
     ],
     "imageResize": true,
-    "uniqCompNum": 218,
+    "uniqCompNum": 219,
     "versionPublish": "5.6.8",
     "screenshot": "screenshot.png",
     "cssOptimize": true,
@@ -3042,50 +3042,103 @@
       },
       "components": [
         {
-          "alias": false,
+          "_name": "form1",
+          "_sourceTheme": "schoolamp",
           "_styles": {
             "padding-top": "(@paddingTop * 15px)",
             "padding-bottom": "(@paddingBottom * 15px)",
-            "& when (@bg-type = 'color')": {
-              "background-color": "@bg-value"
-            },
-            "& when (@bg-type = 'image')": {
-              "background-image": "url(@bg-value)"
-            },
-            "input, textarea, select": {
-              "color": "@labelsColor !important",
-              "border-color": "@borderColor",
-              "&:hover, &:focus": {
-                "border-color": "@primaryColor"
-              },
-              "background": "@inputColor"
-            },
-            "input::-webkit-input-placeholder": {
-              "color": "fade(@labelsColor, 50%)"
-            },
-            "input::-moz-placeholder": {
-              "color": "fade(@labelsColor, 50%)"
-            },
-            "textarea::-webkit-input-placeholder": {
-              "color": "fade(@labelsColor, 50%)"
-            },
-            "textarea::-moz-placeholder": {
-              "color": "fade(@labelsColor, 50%)"
-            },
-            "form .mbr-section-btn, .btn": {
-              "@media (max-width: 991px)": {
-                "width": "100%"
+            "background-color": "@bg",
+            ".container-wrapper": {
+              "padding": "6.25rem",
+              "position": "relative",
+              "& when (@showSpaceAround)": {
+                "margin": "3.75rem"
               }
             },
-            ".mbr-section-title": {
+            "& when (@bgContainer-type = 'color')": {
+              ".container-wrapper": {
+                "background-color": "@bgContainer-value"
+              }
+            },
+            "& when (@bgContainer-type = 'image')": {
+              ".container-wrapper": {
+                "background-image": "url(@bgContainer-value)",
+                "background-position": "center",
+                "background-repeat": "no-repeat",
+                "background-size": "cover"
+              }
+            },
+            "& when (@showIcons)": {
+              ".icon-wrap": {
+                "margin-right": "0.625rem",
+                "width": "24px",
+                "height": "24px",
+                "color": "@iconsColor",
+                "font-size": "~\"@{iconsSize}rem\""
+              }
+            },
+            ".item": {
+              "padding": ".5rem 0"
+            },
+            ".form-wrapper": {
+              "background-color": "@bgFormColor"
+            },
+            ".mbr-section-btn": {
+              "margin": "1.875rem 0 0"
+            },
+            ".btn": {
+              "padding": ".75rem 1rem"
+            },
+            ".mbr-form .mbr-row": {
+              "margin-left": "-15px",
+              "margin-right": "-15px"
+            },
+            "@media (max-width: 991px)": {
+              ".container-wrapper": {
+                "padding": "1rem 0"
+              },
+              "& when (@showSpaceAround)": {
+                ".container": {
+                  "margin": "6.25rem 0"
+                }
+              },
+              ".items-icon": {
+                "margin-bottom": "1rem"
+              },
+              ".form-wrapper": {
+                "padding": "1.875rem",
+                "margin-top": "1rem"
+              }
+            },
+            "@media (max-width: 576px)": {
+              "& when (@showSpaceAround)": {
+                ".container-wrapper": {
+                  "padding": "1rem 0",
+                  "margin": "1.875rem"
+                }
+              },
+              ".form-wrapper": {
+                "padding": "1rem"
+              }
+            },
+            ".main-text": {
+              "color": "#ffffff"
+            },
+            "P": {
+              "text-align": "center",
               "color": "#ff8f00"
+            },
+            "H2": {
+              "color": "#ff8f00"
+            },
+            ".main-title": {
+              "text-align": "center"
             }
           },
-          "_name": "contacts2",
-          "_sourceTheme": "mobirise-amp",
-          "_customHTML": "<section class=\"contacts2\" group=\"Contacts\" plugins=\"amp-main, amp-form, amp-mustache\">\n\n    <mbr-parameters>\n        <!-- Block parameters controls (Blue \"Gear\" panel) -->\n        <header>Size</header>\n        <input type=\"range\" inline=\"\" title=\"Top\" name=\"paddingTop\" min=\"0\" max=\"10\" step=\"1\" value=\"6\">\n        <input type=\"range\" inline=\"\" title=\"Bottom\" name=\"paddingBottom\" min=\"0\" max=\"10\" step=\"1\" value=\"6\">\n        <header>Show/Hide</header>\n        <input type=\"checkbox\" title=\"Title\" name=\"showTitle\" checked=\"\">\n        <input type=\"checkbox\" title=\"Subtitle\" name=\"showSubtitle\" checked=\"\">\n        <header>Form</header>\n        <input type=\"color\" title=\"Fields\" name=\"inputColor\" value=\"#ff8f00\">\n        <input type=\"color\" title=\"Border\" name=\"borderColor\" value=\"#ff8f00\">\n        <input type=\"color\" title=\"Text\" name=\"labelsColor\" value=\"#000000\">\n        <header>Background</header>\n        <fieldset type=\"background\" name=\"bg\">\n            <input type=\"image\" title=\"Image\" value=\"@PROJECT_PATH@/assets/images/sea-choir-15-1560x1288.jpg\" selected=\"\">\n            <input type=\"color\" title=\"Color\" value=\"#ffffff\">\n        </fieldset>\n        <!-- End block parameters -->\n    <input type=\"hidden\" name=\"usedRecaptcha\" value=\"false\"></mbr-parameters>\n\n    <div class=\"container\">\n        <h2 mbr-if=\"showTitle\" class=\"mbr-section-title align-center mbr-fonts-style mbr-white mbr-bold\" mbr-theme-style=\"display-2\" data-app-selector=\".mbr-section-title\">Allow List</h2>\n        <h3 mbr-if=\"showSubtitle\" class=\"mbr-section-subtitle align-center mbr-fonts-style mbr-white mbr-regular mbr-pt-2\" mbr-theme-style=\"display-7\" data-app-selector=\".mbr-section-subtitle\">40x1/1 NFTs from 40 artists for 0.1 ETH</h3>\n\n        <div class=\"mbr-row mbr-jc-c\" mbr-class=\"{'mbr-pt-4': showTitle || showSubtitle}\">\n            <div mbr-form=\"\" class=\"mbr-col-lg-7 mbr-col-md-10 mbr-col-sm-12\">\n<!--Formbuilder Form-->\n<form action=\"creativephotoc2022@gmail.com\" name=\"Mobirise Form\" method=\"post\" class=\"mbr-form\">\n<div class=\"mbr-form-row\">\n<div submit-success=\"\" class=\"mbr-col-lg-12 mbr-col-md-12 mbr-col-sm-12\">\n<template data-form-alert=\"\" type=\"amp-mustache\">Sent successfully!\nPlease follow us on Discord and Twitter not to miss out on the mint day.</template>\n</div>\n<div submit-error=\"\" class=\"mbr-col-lg-12 mbr-col-md-12 mbr-col-sm-12\">\n<template data-form-alert=\"\" type=\"amp-mustache\">Sent successfully!\nPlease follow us on Discord and Twitter not to miss out on the mint day.</template>\n</div>\n</div>\n<div class=\"dragArea mbr-form-row\">\n<div data-for=\"form[data][0][1]\" class=\"mbr-col-sm-12 mbr-col field\">\n<input type=\"hidden\" name=\"form[data][0][0]\" value=\"Name\">\n<input type=\"text\" name=\"form[data][0][1]\" placeholder=\"Name\" data-form-field=\"Name\" mbr-theme-style=\"display-4\" required=\"required\" class=\"field-input\" value=\"\">\n</div>\n<div data-for=\"form[data][1][1]\" class=\"mbr-col-sm-12 mbr-col field \">\n<input type=\"hidden\" name=\"form[data][1][0]\" value=\"Email\">\n<input type=\"email\" name=\"form[data][1][1]\" placeholder=\"Email\" data-form-field=\"Email\" mbr-theme-style=\"display-4\" required=\"required\" class=\"field-input\" value=\"\">\n</div>\n<div data-for=\"form[data][2][1]\" class=\"mbr-col-lg-12 mbr-col-md-12 mbr-col-sm-12 field\">\n<input type=\"hidden\" name=\"form[data][2][0]\" value=\"Twitter @YourTag\">\n<input type=\"text\" name=\"form[data][2][1]\" placeholder=\"Twitter @YourTag\" data-form-field=\"Twitter @YourTag\" mbr-theme-style=\"display-7\" class=\"field-input\" value=\"\">\n</div>\n<div data-for=\"form[data][3][1]\" class=\"mbr-col-lg-12 mbr-col-md-12 mbr-col-sm-12 field\">\n<input type=\"hidden\" name=\"form[data][3][0]\" value=\"Wallet address ETH\">\n<input type=\"text\" name=\"form[data][3][1]\" placeholder=\"Wallet address ETH\" data-form-field=\"Wallet address ETH\" mbr-theme-style=\"display-7\" class=\"field-input\" required=\"required\" value=\"\">\n</div>\n<div class=\"mbr-col-sm-12 mbr-col-md-12 mbr-col-lg-12 mbr-section-btn align-center\" mbr-buttons=\"true\" mbr-theme-style=\"display-4\" data-toolbar=\"-mbrBtnMove,-mbrLink,-mbrBtnRemove,-mbrBtnAdd\">\n<a data-toolbar=\"-mbrBtnMove,-mbrLink,-mbrBtnRemove,-mbrBtnAdd\" type=\"submit\" class=\"btn btn-primary btn-form\">Sign Up</a>\n</div>\n</div>\n</form><!--Formbuilder Form-->\n</div>\n        </div>\n    </div>\n</section>",
-          "_cid": "tf0bYhCBMO",
-          "_anchor": "contacts2-60",
+          "_customHTML": "<section class=\"form1\" group=\"Forms\" plugins=\"amp-main, amp-form, amp-mustache\">\n\n    <mbr-parameters>\n        <!-- Block parameters controls (Blue \"Gear\" panel) -->\n        <input type=\"range\" inline=\"\" title=\"Top\" name=\"paddingTop\" min=\"0\" max=\"9\" step=\"1\" value=\"0\">\n        <input type=\"range\" inline=\"\" title=\"Bottom\" name=\"paddingBottom\" min=\"0\" max=\"9\" step=\"1\" value=\"0\">\n        <input type=\"checkbox\" title=\"Show Space Around\" name=\"showSpaceAround\" checked=\"\">\n        <input type=\"checkbox\" title=\"Show Title\" name=\"showTitle\" checked=\"\">\n        <input type=\"checkbox\" title=\"Show Text\" name=\"showText\" checked=\"\">\n        <input type=\"checkbox\" title=\"Show Form Title\" name=\"showFormTitle\">\n\n        <input type=\"checkbox\" title=\"Show List\" name=\"showList\" checked=\"\">\n        <input type=\"range\" inline=\"\" title=\"String Count\" name=\"stringCount\" min=\"1\" max=\"10\" value=\"3\" condition=\"showList\">\n        <input type=\"checkbox\" title=\"Show Icons\" name=\"showIcons\" condition=\"showList\" checked=\"\">\n        <input type=\"range\" inline=\"\" title=\"Icons Size\" name=\"iconsSize\" min=\"0.5\" max=\"2\" step=\"0.2\" value=\"1.5\" condition=\"showIcons &amp;&amp; showList\">\n        <input type=\"color\" title=\"Icons Color\" name=\"iconsColor\" value=\"#ff8f00\" condition=\"showIcons &amp;&amp; showList\">\n\n        <input type=\"color\" title=\"BG Form Colror\" name=\"bgFormColor\" value=\"#20202a\">\n        <input type=\"color\" title=\"Background Color\" name=\"bg\" value=\"#20202a\" condition=\"showSpaceAround\">\n        <input type=\"checkbox\" title=\"Media on Left/Right\" name=\"flexDirection\">\n\n\n        <fieldset type=\"background\" name=\"bgContainer\">\n            <input type=\"color\" title=\"Background Color\" value=\"#9fbcda\">\n            <input type=\"image\" title=\"Background Image\" value=\"@PROJECT_PATH@/assets/images/4.-the-buffalo-herder-1518x1012.jpg\" selected=\"\">\n        </fieldset>\n        <input type=\"checkbox\" title=\"Overlay\" name=\"overlay\" condition=\"bgContainer.type !== 'color'\" checked=\"\">\n        <input type=\"color\" title=\"Overlay Color\" name=\"overlayColor\" value=\"#20202a\" condition=\"overlay &amp;&amp; bgContainer.type !== 'color'\">\n        <input type=\"range\" inline=\"\" title=\"Opacity\" name=\"overlayOpacity\" min=\"0\" max=\"1\" step=\"0.1\" value=\"0.7\" condition=\"overlay &amp;&amp; bgContainer.type !== 'color'\">\n        <!-- End block parameters -->\n    <input type=\"hidden\" name=\"usedRecaptcha\" value=\"false\"></mbr-parameters>\n    \n    <div class=\"container-wrapper\">\n        <div class=\"mbr-overlay\" mbr-if=\"overlay &amp;&amp; bgContainer.type !== 'color'\" opacity=\"{{overlayOpacity}}\" bg-color=\"{{overlayColor}}\"></div>\n        <div class=\"container\">\n            <div class=\"mbr-row mbr-justify-content-between mbr-align-items-center\" mbr-class=\"{'mbr-row-reverse':flexDirection == true}\">\n                <div class=\"mbr-col-lg-5 mbr-col-md-12 mbr-col-sm-12\">\n    \n                    <h2 mbr-if=\"showTitle\" class=\" mbr-title main-title align-left mbr-white mbr-bold mbr-fonts-style mbr-mb-8\" mbr-theme-style=\"display-5\" data-app-selector=\".main-title\">Telephone Collective</h2>\n                    <p class=\"mbr-fonts-style main-text mbr-text grey-color align-left mbr-mb-50\" mbr-theme-style=\"display-7\" data-app-selector=\".main-text\" mbr-if=\"showText\">More details coming as soon as we have images from all photographers!<br>Follow us on Twitter and Discord to know more.</p>\n                    \n                    <div class=\"items-icon\" mbr-list=\"\" mbr-list-grow=\"stringCount\" mbr-if=\"showList\">\n                         <div class=\"item item-icon\">\n                             <div class=\"card-icon-text mbr-align-items-center d-flex\">\n                                <div class=\"icon-wrap mbr-align-items-center d-flex mbr-justify-content-center\">\n                                    <span mbr-icon=\"\" class=\"mbr-iconfont mobi-mbri-camera mobi-mbri\" mbr-if=\"showIcons\"></span>\n                                </div>\n                                <p class=\"item mbr-text mbr-fonts-style mbr-white\" mbr-theme-style=\"display-7\" data-app-selector=\".item, .items\">\n                                    40 Photographers</p>\n                            </div>\n                         </div>\n                         <div class=\"item item-icon\">\n                             <div class=\"card-icon-text mbr-align-items-center d-flex\">\n                                <div class=\"icon-wrap mbr-align-items-center d-flex mbr-justify-content-center\">\n                                    <span mbr-icon=\"\" class=\"mbr-iconfont mbrib-users\" mbr-if=\"showIcons\"></span>\n                                </div>\n                                <p class=\"item mbr-text mbr-white mbr-fonts-style \" mbr-theme-style=\"display-7\" data-app-selector=\".item, .items\">\n                                    40x1/1 NFTs</p>\n                            </div>\n                         </div>\n                         \n                     <div class=\"item item-icon\">\n                             <div class=\"card-icon-text mbr-align-items-center d-flex\">\n                                <div class=\"icon-wrap mbr-align-items-center d-flex mbr-justify-content-center\">\n                                    <span mbr-icon=\"\" class=\"mbr-iconfont fa-phone fa\" mbr-if=\"showIcons\"></span>\n                                </div>\n                                <p class=\"item mbr-text mbr-white mbr-fonts-style \" mbr-theme-style=\"display-7\" data-app-selector=\".item, .items\">0.1 ETH</p>\n                            </div>\n                         </div></div>\n                </div>\n    \n                <div class=\"mbr-col-lg-6  mbr-col-md-12 mbr-col-sm-12\">\n                    <div class=\"form-wrapper mbr-p-60\">\n                        <h2 mbr-theme-style=\"display-5\" class=\"mbr-fonts-style mbr-title form-title align-left mbr-black mbr-light mbr-fonts-style mbr-mb-16\">Join the allow list!</h2>\n                        <div mbr-form=\"\">\n<!--Formbuilder Form-->\n<form action=\"creativephotoc2022@gmail.com\" name=\"Mobirise Form\" method=\"POST\" class=\"mbr-form\">\n<div class=\"mbr-row\">\n<div submit-success=\"\" class=\"mbr-col-lg-12 mbr-col-md-12 mbr-col-sm-12\">\n<template data-form-alert=\"\" type=\"amp-mustache\">Sent successfully!\nPlease follow us on Discord and Twitter not to miss out on the mint day.</template>\n</div>\n<div submit-error=\"\" class=\"mbr-col-lg-12 mbr-col-md-12 mbr-col-sm-12\">\n<template data-form-alert=\"\" type=\"amp-mustache\">Sent successfully!\nPlease follow us on Discord and Twitter not to miss out on the mint day.</template>\n</div>\n</div>\n<div class=\"dragArea mbr-row\">\n<div data-for=\"form[data][0][1]\" class=\"mbr-col-lg-12 mbr-col-md-12 mbr-col-sm-12 field\">\n<input type=\"hidden\" name=\"form[data][0][0]\" value=\"Name\">\n<input type=\"text\" name=\"form[data][0][1]\" placeholder=\"Name\" data-form-field=\"Name\" mbr-theme-style=\"display-7\" required=\"required\" class=\"field-input\" value=\"\">\n</div>\n<div data-for=\"form[data][1][1]\" class=\"mbr-col-lg-12 mbr-col-md-12 mbr-col-sm-12 field\">\n<input type=\"hidden\" name=\"form[data][1][0]\" value=\"Twitter @YourTag\">\n<input type=\"text\" name=\"form[data][1][1]\" placeholder=\"Twitter @YourTag\" data-form-field=\"Twitter @YourTag\" mbr-theme-style=\"display-7\" required=\"required\" class=\"field-input\" value=\"\">\n</div>\n<div data-for=\"form[data][2][1]\" class=\"mbr-col-lg-12 mbr-col-md-12 mbr-col-sm-12 field\">\n<input type=\"hidden\" name=\"form[data][2][0]\" value=\"Email\">\n<input type=\"text\" name=\"form[data][2][1]\" placeholder=\"Email\" data-form-field=\"Email\" mbr-theme-style=\"display-7\" required=\"required\" class=\"field-input\" value=\"\">\n</div>\n<div data-for=\"form[data][3][1]\" class=\"mbr-col-md-12 mbr-col-sm-12 field \">\n<input type=\"hidden\" name=\"form[data][3][0]\" value=\"Wallet address\">\n<input type=\"text\" name=\"form[data][3][1]\" placeholder=\"Wallet address 0x31.....\" data-form-field=\"Wallet address\" mbr-theme-style=\"display-7\" required=\"required\" class=\"field-input\" value=\"\">\n</div>\n<div data-for=\"form[data][4][1]\" class=\"mbr-col-lg-12 mbr-col-md-12 mbr-col-sm-12 field\">\n<input type=\"hidden\" name=\"form[data][4][0]\" value=\"password\">\n<input type=\"password\" name=\"form[data][4][1]\" placeholder=\"Password\" data-form-field=\"password\" mbr-theme-style=\"display-7\" required=\"required\" class=\"field-input\" value=\"\">\n</div>\n<div data-for=\"form[data][5][1]\" class=\"mbr-col-lg-12 mbr-col-md-12 mbr-col-sm-12 field\">\n<input type=\"hidden\" name=\"form[data][5][0]\" value=\"password1\">\n<input type=\"password\" name=\"form[data][5][1]\" placeholder=\"Confirm Password\" data-form-field=\"password1\" mbr-theme-style=\"display-7\" required=\"required\" class=\"field-input\" value=\"\">\n</div>\n<div mbr-buttons=\"true\" mbr-theme-style=\"display-4\" data-toolbar=\"-mbrBtnMove,-mbrLink,-mbrBtnRemove,-mbrBtnAdd\" class=\"mbr-col-lg-12 mbr-col-md-12 mbr-col-sm-12 mbr-section-btn field\">\n<a data-toolbar=\"-mbrBtnMove,-mbrLink,-mbrBtnRemove,-mbrBtnAdd\" type=\"submit\" class=\"btn btn-form width-full btn-black\">Send</a>\n</div>\n</div>\n</form><!--Formbuilder Form-->\n</div>\n                        <p mbr-theme-style=\"display-7\" class=\"mbr-fonts-style mbr-fonts-style text-small grey-color mbr-text align-left mbr-mt-30 mbr-mb-30\">________________</p>\n                    </div>\n                </div>\n            </div>\n        </div>\n    </div>\n</section>",
+          "_anchor": "form1-62",
+          "_isUserblock": true,
+          "_cid": "tf0hv6J42r",
           "_protectedParams": [],
           "_global": false,
           "_once": false,
