@@ -1,7 +1,7 @@
 {
   "settings": {
     "name": "Creative Photographers Club",
-    "currentPage": "Collective.html",
+    "currentPage": "Lottery.html",
     "theme": {
       "name": "mobirise-amp",
       "title": "Mobirise AMP",
@@ -73,7 +73,7 @@
       }
     ],
     "imageResize": true,
-    "uniqCompNum": 229,
+    "uniqCompNum": 235,
     "versionPublish": "5.6.8",
     "screenshot": "screenshot.png",
     "cssOptimize": true,
@@ -110,7 +110,6 @@
       "themeColor": "#ff8f00"
     },
     "robotsText": "User-agent: *\r\nDisallow: /cgi-bin\r\n",
-    "canonical-url": false,
     "gdpr": false
   },
   "pages": {
@@ -2614,6 +2613,77 @@
                 "opacity": "@overlayOpacity"
               }
             },
+            ".custom-card": {
+              "padding": "1rem"
+            },
+            ".card-box": {
+              "position": "relative",
+              "min-width": "250px",
+              "max-width": "100%",
+              "transition": "0.5s",
+              "&:hover": {
+                "transform": "translateY(-15px)",
+                "box-shadow": "0 25px 45px rgba(0, 0, 0, 0.2)",
+                ".overlay": {
+                  "top": "0",
+                  "opacity": "0.8",
+                  "z-index": "999",
+                  "@media (max-width: 991px)": {
+                    "top": "100%",
+                    "opacity": "0"
+                  }
+                }
+              }
+            },
+            ".overlay": {
+              "display": "flex",
+              "justify-content": "center",
+              "align-items": "center",
+              "flex-direction": "column",
+              "opacity": "0",
+              "position": "absolute",
+              "top": "100%",
+              "left": "0",
+              "height": "100%",
+              "width": "100%",
+              "background-color": "@cardOverlayColor",
+              "transition": "all 0.5s",
+              "pointer-events": "none",
+              "& > *": {
+                "pointer-events": "all"
+              },
+              "@media (max-width: 991px)": {
+                "top": "0",
+                "opacity": "0.8"
+              }
+            }
+          },
+          "_name": "team1",
+          "_sourceTheme": "simpleamp",
+          "_customHTML": "<section class=\"team1\" group=\"Teams\" plugins=\"amp-main\">\n    <mbr-parameters>\n    <!-- Block parameters controls (Blue \"Gear\" panel) -->\n    <header>Size</header>\n    <input type=\"checkbox\" title=\"Full Width\" name=\"fullWidth\">\n    <input type=\"range\" inline=\"\" title=\"Top\" name=\"paddingTop\" min=\"0\" max=\"10\" step=\"1\" value=\"1\">\n    <input type=\"range\" inline=\"\" title=\"Bottom\" name=\"paddingBottom\" min=\"0\" max=\"10\" step=\"1\" value=\"5\">\n    <header>Title</header>\n    <input type=\"checkbox\" title=\"Show Title\" name=\"showTitle\" checked=\"\">\n    <input type=\"checkbox\" title=\"Show Subtitle\" name=\"showSubtitle\" checked=\"\">\n    <select title=\"Align\" name=\"titleAlign\" condition=\"showTitle || showSubtitle\">\n        <option value=\"1\">Left</option>\n        <option value=\"2\" selected=\"\">Center</option>\n        <option value=\"3\">Right</option>\n    </select>\n    <header>Cards</header>\n    <input type=\"range\" title=\"Cards Count\" name=\"cardsAmout\" min=\"1\" max=\"8\" value=\"8\" step=\"1\">\n    <input type=\"color\" title=\"Card Overlay\" name=\"cardOverlayColor\" value=\"#ff8f00\">\n    <header>Background</header>\n    <fieldset type=\"background\" name=\"bg\">\n        <input type=\"image\" title=\"Background Image\" value=\"@PROJECT_PATH@/assets/images/background4-1.jpg\">\n        <input type=\"color\" title=\"Background Color\" value=\"#ffffff\" selected=\"\">\n    </fieldset>\n    <input type=\"checkbox\" title=\"Overlay\" name=\"overlay\" checked=\"\" condition=\"bg.type!='color'\">\n    <input type=\"color\" title=\"Overlay Color\" name=\"overlayColor\" value=\"#ffffff\" condition=\"bg.type!='color' &amp;&amp; overlay\">\n    <input type=\"range\" inline=\"\" title=\"Overlay Opacity\" name=\"overlayOpacity\" min=\"0\" max=\"1\" step=\"0.1\" value=\"0.6\" condition=\"bg.type!='color' &amp;&amp; overlay\">\n    <!-- End block parameters -->\n    </mbr-parameters>\n    <div class=\"mbr-overlay\" mbr-if=\"overlay &amp;&amp; bg.type !== 'color'\"></div>\n    <!--  -->\n    <div mbr-class=\"{'container': !fullWidth,\n                     'container-fluid': fullWidth}\">\n        <div class=\"mbr-row mbr-jc-c mbr-pb-5\" mbr-class=\"{'align-center': titleAlign==2,\n                         'align-right': titleAlign==3}\">\n            <div class=\"mbr-col-sm-12 mbr-col-md-12 mbr-col-lg-12 mbr-pb-4\" mbr-if=\"showTitle\">\n                <h3 class=\"mbr-fonts-style mbr-bold text-upper\" mbr-theme-style=\"display-5\">Who is playing?</h3>\n            </div>\n            <div class=\"mbr-col-sm-12 mbr-col-md-12 mbr-col-lg-12\" mbr-if=\"showSubtitle\">\n                <p class=\"mbr-fonts-style custom-section-subtitle\" mbr-theme-style=\"display-7\" data-app-selector=\".custom-section-subtitle\">Here you will see all of the participants</p>\n            </div>\n        </div>\n        <div class=\"mbr-row mbr-jc-c\">\n            <div class=\"custom-card mbr-col-sm-12 mbr-col-md-6 mbr-col-lg-3\">\n                <div class=\"card-box\">\n                    <amp-img class=\"mobirise-loader\" src=\"@PROJECT_PATH@/assets/images/home-meta-443x443.jpg\" layout=\"responsive\" width=\"253\" height=\"253\" alt=\"image\">\n                        <div placeholder=\"\" class=\"placeholder\"></div>\n                        <img src=\"@PROJECT_PATH@/assets/images/home-meta-443x443.jpg\" class=\"mbr-temp\" alt=\"\" data-aspectratio=\"1\">\n                    </amp-img>\n                    <div class=\"overlay\">\n                        <p class=\"mbr-fonts-style mbr-bold text-upper person-name\" mbr-theme-style=\"display-5\" data-app-selector=\".person-name\">Kangoo</p>\n                        <p class=\"mbr-fonts-style mbr-bold person-info\" mbr-theme-style=\"display-7\" data-app-selector=\".person-info\">#1</p>\n                    </div>\n                </div>\n            </div>\n            <div class=\"custom-card mbr-col-sm-12 mbr-col-md-6 mbr-col-lg-3\" mbr-if=\"cardsAmout > 1\">\n                <div class=\"card-box\">\n                    <amp-img class=\"mobirise-loader\" src=\"@PROJECT_PATH@/assets/images/poyo-gashti-400x400.jpg\" layout=\"responsive\" width=\"253\" height=\"253\" alt=\"image\">\n                        <div placeholder=\"\" class=\"placeholder\"></div>\n                        <img src=\"@PROJECT_PATH@/assets/images/poyo-gashti-400x400.jpg\" class=\"mbr-temp\" alt=\"\" data-aspectratio=\"1\">\n                    </amp-img>\n                    <div class=\"overlay\">\n                        <p class=\"mbr-fonts-style mbr-bold text-upper person-name\" mbr-theme-style=\"display-5\" data-app-selector=\".person-name\">Poyo Gashti</p>\n                        <p class=\"mbr-fonts-style mbr-bold person-info\" mbr-theme-style=\"display-7\" data-app-selector=\".person-info\">#2</p>\n                    </div>\n                </div>\n            </div>\n            <div class=\"custom-card mbr-col-sm-12 mbr-col-md-6 mbr-col-lg-3\" mbr-if=\"cardsAmout > 2\">\n                <div class=\"card-box\">\n                    <amp-img class=\"mobirise-loader\" src=\"@PROJECT_PATH@/assets/images/juliet-hass-400x400.jpg\" layout=\"responsive\" width=\"253\" height=\"253\" alt=\"image\">\n                        <div placeholder=\"\" class=\"placeholder\"></div>\n                        <img src=\"@PROJECT_PATH@/assets/images/juliet-hass-400x400.jpg\" class=\"mbr-temp\" alt=\"\" data-aspectratio=\"1\">\n                    </amp-img>\n                    <div class=\"overlay\">\n                        <p class=\"mbr-fonts-style mbr-bold text-upper person-name\" mbr-theme-style=\"display-5\" data-app-selector=\".person-name\">Juliet Haas</p>\n                        <p class=\"mbr-fonts-style mbr-bold person-info\" mbr-theme-style=\"display-7\" data-app-selector=\".person-info\">#3</p>\n                    </div>\n                </div>\n            </div>\n            <div class=\"custom-card mbr-col-sm-12 mbr-col-md-6 mbr-col-lg-3\" mbr-if=\"cardsAmout > 3\">\n                <div class=\"card-box\">\n                    <amp-img class=\"mobirise-loader\" src=\"@PROJECT_PATH@/assets/images/tony-reddington-400x400.jpg\" layout=\"responsive\" width=\"253\" height=\"253\" alt=\"image\">\n                        <div placeholder=\"\" class=\"placeholder\"></div>\n                        <img src=\"@PROJECT_PATH@/assets/images/tony-reddington-400x400.jpg\" class=\"mbr-temp\" alt=\"\" data-aspectratio=\"1\">\n                    </amp-img>\n                    <div class=\"overlay\">\n                        <p class=\"mbr-fonts-style mbr-bold text-upper person-name\" mbr-theme-style=\"display-5\" data-app-selector=\".person-name\">Tony Reddington</p>\n                        <p class=\"mbr-fonts-style mbr-bold person-info\" mbr-theme-style=\"display-7\" data-app-selector=\".person-info\">#4</p>\n                    </div>\n                </div>\n            </div>\n            <div class=\"custom-card mbr-col-sm-12 mbr-col-md-6 mbr-col-lg-3\" mbr-if=\"cardsAmout > 4\">\n                <div class=\"card-box\">\n                    <amp-img class=\"mobirise-loader\" src=\"@PROJECT_PATH@/assets/images/mellodora-400x400.jpg\" layout=\"responsive\" width=\"253\" height=\"253\" alt=\"image\">\n                        <div placeholder=\"\" class=\"placeholder\"></div>\n                        <img src=\"@PROJECT_PATH@/assets/images/mellodora-400x400.jpg\" class=\"mbr-temp\" alt=\"\" data-aspectratio=\"1\">\n                    </amp-img>\n                    <div class=\"overlay\">\n                        <p class=\"mbr-fonts-style mbr-bold text-upper person-name\" mbr-theme-style=\"display-5\" data-app-selector=\".person-name\">Mellodora</p>\n                        <p class=\"mbr-fonts-style mbr-bold person-info\" mbr-theme-style=\"display-7\" data-app-selector=\".person-info\">#5</p>\n                    </div>\n                </div>\n            </div>\n            <div class=\"custom-card mbr-col-sm-12 mbr-col-md-6 mbr-col-lg-3\" mbr-if=\"cardsAmout > 5\">\n                <div class=\"card-box\">\n                    <amp-img class=\"mobirise-loader\" src=\"@PROJECT_PATH@/assets/images/banthafodderdan-400x400.jpg\" layout=\"responsive\" width=\"253\" height=\"253\" alt=\"image\">\n                        <div placeholder=\"\" class=\"placeholder\"></div>\n                        <img src=\"@PROJECT_PATH@/assets/images/banthafodderdan-400x400.jpg\" class=\"mbr-temp\" alt=\"\" data-aspectratio=\"1\">\n                    </amp-img>\n                    <div class=\"overlay\">\n                        <p class=\"mbr-fonts-style mbr-bold text-upper person-name\" mbr-theme-style=\"display-5\" data-app-selector=\".person-name\">Dan Woo</p>\n                        <p class=\"mbr-fonts-style mbr-bold person-info\" mbr-theme-style=\"display-7\" data-app-selector=\".person-info\">#6</p>\n                    </div>\n                </div>\n            </div>\n            <div class=\"custom-card mbr-col-sm-12 mbr-col-md-6 mbr-col-lg-3\" mbr-if=\"cardsAmout > 6\">\n                <div class=\"card-box\">\n                    <amp-img class=\"mobirise-loader\" src=\"@PROJECT_PATH@/assets/images/said-chaara-400x400.jpg\" layout=\"responsive\" width=\"253\" height=\"253\" alt=\"image\">\n                        <div placeholder=\"\" class=\"placeholder\"></div>\n                        <img src=\"@PROJECT_PATH@/assets/images/said-chaara-400x400.jpg\" class=\"mbr-temp\" alt=\"\" data-aspectratio=\"1\">\n                    </amp-img>\n                    <div class=\"overlay\">\n                        <p class=\"mbr-fonts-style mbr-bold text-upper person-name\" mbr-theme-style=\"display-5\" data-app-selector=\".person-name\">Said Chaara</p>\n                        <p class=\"mbr-fonts-style mbr-bold person-info\" mbr-theme-style=\"display-7\" data-app-selector=\".person-info\">#7</p>\n                    </div>\n                </div>\n            </div>\n            <div class=\"custom-card mbr-col-sm-12 mbr-col-md-6 mbr-col-lg-3\" mbr-if=\"cardsAmout > 7\">\n                <div class=\"card-box\">\n                    <amp-img class=\"mobirise-loader\" src=\"@PROJECT_PATH@/assets/images/ozge-400x400.jpg\" layout=\"responsive\" width=\"253\" height=\"253\" alt=\"image\">\n                        <div placeholder=\"\" class=\"placeholder\"></div>\n                        <img src=\"@PROJECT_PATH@/assets/images/ozge-400x400.jpg\" class=\"mbr-temp\" alt=\"\" data-aspectratio=\"1\">\n                    </amp-img>\n                    <div class=\"overlay\">\n                        <p class=\"mbr-fonts-style mbr-bold text-upper person-name\" mbr-theme-style=\"display-5\" data-app-selector=\".person-name\">Ozge Bozkurt</p>\n                        <p class=\"mbr-fonts-style mbr-bold person-info\" mbr-theme-style=\"display-7\" data-app-selector=\".person-info\">#8</p>\n                    </div>\n                </div>\n            </div>\n        </div>\n    </div>\n</section>",
+          "_anchor": "team1-6e",
+          "_isUserblock": true,
+          "_cid": "tfzNT8sSzN",
+          "_protectedParams": [],
+          "_global": false,
+          "_once": false,
+          "_params": {}
+        },
+        {
+          "alias": false,
+          "_styles": {
+            "padding-top": "(@paddingTop * 15px)",
+            "padding-bottom": "(@paddingBottom * 15px)",
+            "& when (@bg-type = 'color')": {
+              "background-color": "@bg-value"
+            },
+            "& when (@bg-type = 'image')": {
+              "background-image": "url(@bg-value)",
+              ".mbr-overlay": {
+                "background-color": "@overlayColor",
+                "opacity": "@overlayOpacity"
+              }
+            },
             "P": {
               "letter-spacing": "3px"
             },
@@ -3217,12 +3287,28 @@
         }
       ]
     },
-    "page5.html": {
+    "Lottery.html": {
       "settings": {
-        "title": "Page 5",
-        "order": 1
+        "title": "Lottery",
+        "order": 1,
+        "meta_image": "@PROJECT_PATH@/assets/images/cpc_barneys-2000x2000.png"
       },
       "components": [
+        {
+          "_customTemplate": true,
+          "_afterNavbarItem": false,
+          "_customHTML": "<iframe src=\"https://gateway.ipfscdn.io/ipfs/Qma5FgmS9s3hkQrURfG4XDnh5Dxp9Fx9ZjBYkPFUNdQwfi/edition-drop.html?contract=0x59a037afa09E8CB2AB608454ab2960c987A5800c&amp;chainId=1&amp;tokenId=0&amp;theme=system&amp;primaryColor=orange&amp;secondaryColor=green\" width=\"1000px\" height=\"500px\" style=\"max-width:100%;\" frameborder=\"0\"></iframe>",
+          "_customCSS": "/* Type valid AMP CSS here */\n\ndiv {\n  padding: 80px 0;\n  color: #777;\n  text-align: center;\n}\np {\n  font-size: 60px;\n  color: #777;\n}",
+          "alias": "code-editor",
+          "_tags": [
+            "Extension"
+          ],
+          "_name": "pro.custom-html",
+          "_sourceTheme": "mobirise-amp",
+          "_anchor": "custom-html-6i",
+          "_PHPplaceholders": [],
+          "_JSplaceholders": []
+        },
         {
           "alias": false,
           "_styles": {
