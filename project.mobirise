@@ -78,8 +78,8 @@
     "versionPublish": "5.6.8",
     "screenshot": "screenshot.png",
     "cssOptimize": true,
-    "favicon": "@PROJECT_PATH@/assets/images/cpc-128x128.png",
-    "mbrsiteDomain": "fgyoyjgn8n",
+    "favicon": "@PROJECT_PATH@/assets/images/cpc-128x128_1.png",
+    "mbrsiteDomain": "qonuqsagka",
     "robotsSwitcher": true,
     "sitemapSwitcher": true,
     "sitemapSwitcherAuto": "on",
@@ -111,7 +111,8 @@
     },
     "robotsText": "User-agent: *\nDisallow: /cgi-bin\n",
     "gdpr": false,
-    "cookiesAlert": false
+    "cookiesAlert": false,
+    "canonical-url": false
   },
   "pages": {
     "index.html": {
